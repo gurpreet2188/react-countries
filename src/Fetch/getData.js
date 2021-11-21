@@ -16,25 +16,5 @@ export function GetData() {
         
     }, [])
 
-   if(stat) {
-       return (
-       
-        <div>
-            dummy...
-             {/* {console.log(data)} */}
-            {/* {data.map((n, index) => {
-                
-                return <div key={index}>
-                    <p>{n.name}</p>
-                    <img src={n.flag}></img>
-                </div>
-            })} */}
-
-        </div>
-       )
-   } else {
-       return (
-           <p>loading</p>
-       )
-   }
+    return data, stat
 }
