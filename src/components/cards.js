@@ -6,8 +6,8 @@ export function Cards() {
     const [data, setData] = useState()
     const [stat, setStat] = useState(false)
     const {filter} = useContext(FilterContext)
+    const {search} = useContext(FilterContext)
    
-
     useEffect(() => {
         fetch("https://restcountries.com/v2/all").then(response => {
             return response.json()
@@ -30,20 +30,46 @@ export function Cards() {
     }
 
     if (stat) {
-        if(filter === "all") {
+        if(filter === "all" && search === "") {
             return (
                 data.map((n, i) => {
                     return loadCards(n,i)
                 })
             )
-        } else {
+        } else if (filter === "all" && search != "") {
+            return (
+                data.map((n, i) => {
+                    if(n.name.toLowerCase().includes(search.toLowerCase()) || n.region.toLowerCase().includes(search.toLowerCase())) {
+                        return loadCards(n,i)
+                    } else if(n.capital != undefined) {
+                        if(n.capital.toLowerCase().includes(search.toLowerCase())) {
+                            return loadCards(n,i)
+                        }
+                    }
+                })
+            )
+        }else if(filter != "all" && search === ""){
             return (
                 data.map((n, i) => {
                     if(n.region.includes(filter)) {
                         return loadCards(n,i)
 
                     }
-                   
+                })
+            )
+        }else if(filter != "all" && search != ""){
+            return (
+                data.map((n, i) => {
+                    if(n.region.includes(filter)) {
+                        if(n.name.toLowerCase().includes(search.toLowerCase()) || n.region.toLowerCase().includes(search.toLowerCase())) {
+                            return loadCards(n,i)
+                        } else if(n.capital != undefined) {
+                            if(n.capital.toLowerCase().includes(search.toLowerCase())) {
+                                return loadCards(n,i)
+                            }
+                        }
+
+                    }
                 })
             )
         }

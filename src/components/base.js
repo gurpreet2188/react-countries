@@ -13,13 +13,13 @@ export const FilterContext = createContext(null)
 export function Base () {
 
     const [filter, setFilter] = useState("all")
-    // const [search, setSearch] = useState("")
+    const [search, setSearch] = useState("")
 
     return (
         <div>
             <Header/>
-            <Search/>
-            <FilterContext.Provider value={{filter, setFilter}}>
+            <FilterContext.Provider value={{filter, setFilter, search, setSearch}}>
+                <Search/>
                 <Filter/>
                 <Cards/>
             </FilterContext.Provider>

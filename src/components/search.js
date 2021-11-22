@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { FilterContext } from './base';
 
-export function Search (props) {
-    const [val, setVal] = useState()
+export function Search () {
+    const {setSearch} = useContext(FilterContext)
     const handleChange = e => {
-        setVal(e)
+        setSearch(e.currentTarget.value)
     }
     return (
         <div className="search">
