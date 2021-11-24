@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
+import { Data } from "../App"
 
 export function GetData() {
 
-    const [data, setData] = useState()
-    const [stat, setStat]= useState(false)
+    const { setData, setStat } = useContext(Data)
 
-    useEffect( () => {
+    useEffect(() => {
         fetch("https://restcountries.com/v2/all").then(response => {
             return response.json()
         }).then(loaddata => {
             setData(loaddata)
             setStat(true)
         })
-
-        
     }, [])
 
-    return data, stat
+    return (
+        <></>
+    )
 }

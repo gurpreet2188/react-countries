@@ -10,20 +10,22 @@ import { Cards } from './cards';
 
 export const FilterContext = createContext(null)
 
-export function Base () {
+
+export function Base ({data, stat}) {
 
     const [filter, setFilter] = useState("all")
     const [search, setSearch] = useState("")
 
+   
+
     return (
         <div>
             <Header/>
-            <FilterContext.Provider value={{filter, setFilter, search, setSearch}}>
-                <Search/>
-                <Filter/>
-                <Cards/>
-            </FilterContext.Provider>
-           
+                <FilterContext.Provider value={{filter, setFilter, search, setSearch}}>
+                    <Search/>
+                    <Filter/>
+                    <Cards data={data} stat={stat}/>
+                </FilterContext.Provider>
         </div>
     )
 }
