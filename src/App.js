@@ -8,10 +8,10 @@ export const Router = createContext(null)
 export const Data = createContext(null)
 
 function App() {
-  const [page, setPage] = useState("")
+  const [page, setPage] = useState()
   const [data, setData] = useState([])
   const [stat, setStat] = useState(false)
-
+  // console.log(data)
   return (
     <>
       <Router.Provider value={{ page, setPage }}>
@@ -20,7 +20,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Base data={data} stat={stat} />} />
-              <Route path="/loc/:location" element={<SCard n={page} d={data} />} />
+              <Route path="/loc/:location" element={<SCard n={page} d={data} s={stat} />} />
             </Routes>
           </BrowserRouter>
         </Data.Provider>

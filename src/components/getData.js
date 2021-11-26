@@ -9,7 +9,7 @@ export function GetData() {
         fetch("https://restcountries.com/v2/all").then(response => {
             return response.json()
         }).then(loaddata => {
-            setData(loaddata)
+            setData([...loaddata])
             setStat(true)
         })
     }, [])
