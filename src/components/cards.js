@@ -35,7 +35,7 @@ export function Cards({ data, stat }) {
                         n.capital?.toLowerCase().includes(search.toLowerCase())) {
                         return loadCards(n, i)
                     }else {
-                        return <div> Error In Search</div>
+                        return null
                     }
                 })
             )
@@ -46,7 +46,7 @@ export function Cards({ data, stat }) {
                         return loadCards(n, i)
 
                     }else {
-                        return <div> Error In Search</div>
+                        return null
                     }
                 })
             )
@@ -59,10 +59,10 @@ export function Cards({ data, stat }) {
                             n.capital?.toLowerCase().includes(search.toLowerCase())) {
                             return loadCards(n, i)
                         }else {
-                            return <div> Error In Search</div>
+                            return null
                         }
                     }else {
-                        return <div> Error In Search</div>
+                        return null
                     }
                 })
             )
