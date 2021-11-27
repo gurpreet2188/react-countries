@@ -34,6 +34,8 @@ export function Cards({ data, stat }) {
                         n.region.toLowerCase().includes(search.toLowerCase()) ||
                         n.capital?.toLowerCase().includes(search.toLowerCase())) {
                         return loadCards(n, i)
+                    }else {
+                        return <div> Error In Search</div>
                     }
                 })
             )
@@ -43,6 +45,8 @@ export function Cards({ data, stat }) {
                     if (n.region.includes(filter)) {
                         return loadCards(n, i)
 
+                    }else {
+                        return <div> Error In Search</div>
                     }
                 })
             )
@@ -54,7 +58,11 @@ export function Cards({ data, stat }) {
                             n.region.toLowerCase().includes(search.toLowerCase()) ||
                             n.capital?.toLowerCase().includes(search.toLowerCase())) {
                             return loadCards(n, i)
+                        }else {
+                            return <div> Error In Search</div>
                         }
+                    }else {
+                        return <div> Error In Search</div>
                     }
                 })
             )

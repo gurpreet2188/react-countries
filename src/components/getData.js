@@ -3,8 +3,8 @@ import { Data } from "../App"
 
 export function GetData() {
 
+    
     const { setData, setStat } = useContext(Data)
-
     useEffect(() => {
         fetch("https://restcountries.com/v2/all").then(response => {
             return response.json()
@@ -12,7 +12,7 @@ export function GetData() {
             setData([...loaddata])
             setStat(true)
         })
-    }, [])
+    }, [setData, setStat])
 
     return (
         <></>

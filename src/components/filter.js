@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FilterContext } from './base';
 
 export function Filter() {
@@ -12,7 +12,7 @@ export function Filter() {
         <div>
             <div className="filter">
                 <select className="dropdown" onChange={(e)=>{selected(e)}}>
-                    <option selected value="">Filter by Region</option>
+                    <option defaultValue="">Filter by Region</option>
                     <option value="Africa">Africa</option>
                     <option value="America">America</option>
                     <option value="Asia">Asia</option>

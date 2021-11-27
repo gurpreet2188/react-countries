@@ -16,10 +16,11 @@ export function SCard({ n, d, s }) {
     }
     else {
         if (s) {
-            console.log(d[0].flag)
             d.map((e) => {
                 if (e.alpha3Code.includes(currentLoc)) {
-                    i = d.indexOf(e)
+                   return i = d.indexOf(e)
+                }else {
+                    return (<div> Error In Search</div>)
                 }
             })
         }
@@ -27,10 +28,12 @@ export function SCard({ n, d, s }) {
 
 
     const handleBorders = (b) => {
-        return d.map((m, i) => {
-            if (m.alpha3Code.includes(b)) {
+        return d.map((m, mi) => {
+            if (m.alpha3Code?.includes(b)) {
                 var pos = d.indexOf(m)
-                return <Link key={i} to={`/loc/${m.alpha3Code}`} onClick={(e) => { setPage(pos) }}><button className="button">{m.name}</button></Link>
+                return <Link key={mi} to={`/loc/${m.alpha3Code}`} onClick={() => { setPage(pos) }}><button className="button">{m.name}</button></Link>
+            } else {
+                return null
             }
         })
     }
@@ -50,15 +53,15 @@ export function SCard({ n, d, s }) {
                     <p className="value-title">Top Level Domain: <span className="value">{d[i].topLevelDomain}</span></p>
                     <div className="curr-flex">
                         <p className="value-title">Currency:</p>
-                        {d[i].currencies?.map((c, i) => {
-                            return <p className="value" key={i}>{c.code}</p>
+                        {d[i].currencies?.map((c, ci) => {
+                            return <p className="value" key={ci}>{c.code}</p>
                         })}
                     </div>
 
                     <div className="lang-flex">
                         <p className="value-title">Languages: </p>
-                        {d[i].languages?.map((l, i) => {
-                            return <p className="value" key={i}>{l.name}</p>
+                        {d[i].languages?.map((l, li) => {
+                            return <p className="value" key={li}>{l.name}</p>
                         })}
                     </div>
                     <p className="value-title" >Border Countries:</p>
