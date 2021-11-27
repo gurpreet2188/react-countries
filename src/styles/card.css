@@ -2,17 +2,106 @@
     display: flex;
     flex-direction: column;
     margin: 1.2rem 3rem;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0px 0px 20px rgba(0,0,0,.2);
-    border-radius: 1rem;
+    border-radius: .7rem;
     overflow: hidden;
+    text-decoration: none;
+}
+.card > p, h3{
+    padding: 0;
+    margin: 0;
+    padding-left: 1rem;
+    line-height: 1.5rem;
+}
+
+.card > p:last-child {
+    margin-bottom: 2rem;
 }
 
 .flag {
     display: block;
     width:100%;
-    height: 12rem;
+    height: 10rem;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: 50% 0%;
+    margin-bottom: 2rem;
 }
+
+.card-title {
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.value-title {
+    font-weight: 600;
+}
+
+.value {
+    font-weight: 300;
+}
+
+.s-card {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.s-card > h3 {
+    padding-left: 0;
+}
+
+.curr-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.curr-flex > p  {
+    padding: 0;
+    margin: 0;
+}
+
+.lang-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.1);
+    border-radius: .3rem;
+    text-decoration: none;
+    text-align: center;
+    /* padding: 1rem 0; */
+    margin: 0;
+    font-size: .7rem;
+    overflow: scroll;
+}
+
+.btn-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .3rem;
+    /* max-width: 90vw; */
+    padding: 0;
+    margin: 0;
+}
+
+.bk-btn {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+

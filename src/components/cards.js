@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FilterContext } from './base';
-import { Router, UrlKey } from '../App';
+import { Router} from '../App';
 
 
 export function Cards({ data, stat }) {
@@ -13,10 +13,10 @@ export function Cards({ data, stat }) {
     const loadCards = (n, i) => {
         return <Link key={i} className="card" to={`/loc/${data[i]?.alpha3Code}`} onClick={(e) => { setPage(i) }}>
             <div className="flag" style={{ backgroundImage: `url(${n.flag})` }}></div>
-            <h3>{n.name}</h3>
-            <p>Population: {n.population}</p>
-            <p>Region: {n.region}</p>
-            <p>Capital: {n.capital}</p>
+            <h3 className="card-title">{n.name}</h3>
+            <p className="value-title">Population: <span className="value">{n.population}</span></p>
+            <p className="value-title">Region: <span className="value">{n.region}</span></p>
+            <p className="value-title">Capital: <span className="value">{n.capital}</span></p>
         </Link>
     }
 

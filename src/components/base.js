@@ -1,4 +1,5 @@
 import React, {useState,createContext} from 'react';
+import '../styles/base.css'
 import '../styles/header.css'
 import '../styles/search.css'
 import '../styles/filter.css'
@@ -20,7 +21,7 @@ export function Base ({data, stat}) {
 
     return (
         <div>
-            <Header/>
+            <Header />
                 <FilterContext.Provider value={{filter, setFilter, search, setSearch}}>
                     <Search/>
                     <Filter/>
